@@ -75,6 +75,7 @@ public class LoginServlet extends HttpServlet {
 			logger.info(String.format(">>>>>> usuario correcto."));
 			Usuario usuario;
 			usuario = usuariodao.getUsuario(password, username);
+			logger.info(String.format(">>>>>>creando session."));
 			HttpSession session = request.getSession();
 			String nombresession = usuario.getNombre();
 			session.setAttribute("nombresesion", nombresession);

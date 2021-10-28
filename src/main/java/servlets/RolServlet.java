@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import modelo.RolDAO;
 
 /**
@@ -15,6 +18,7 @@ import modelo.RolDAO;
 @WebServlet("/Rol")
 public class RolServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static Logger logger = LogManager.getLogger(RolServlet.class);
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,9 +35,10 @@ public class RolServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
 		String rolnuevo = request.getParameter("rolnuevo");
-		System.out.println(rolnuevo);
+		logger.info(String.format(">>>>>> intentnado crear rol nuevo ." + rolnuevo));
 		RolDAO roldao = new RolDAO();
 		roldao.insertarRol(rolnuevo);
+		logger.info(String.format(">>>>>> rol nuevo insertado." + rolnuevo));
 		response.sendRedirect("Login/Menu.jsp");
 
 	}
