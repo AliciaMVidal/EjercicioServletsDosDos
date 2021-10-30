@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page session="true"%>
+	
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Alta rol</title>
-<%@ include file="cabecera.jsp" %>  
 </head>
 <body>
+<%@ include file="cabecera.jsp" %>  
+
 	<form  action="../Rol">
 		<span class="subtitle">Rol:</span> 
 		<br> 

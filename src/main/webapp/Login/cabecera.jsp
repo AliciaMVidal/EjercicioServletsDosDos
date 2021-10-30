@@ -10,15 +10,23 @@
 <title>Cabecera</title>
 </head>
 <body>
+    <script src ="Volver.js" type="text/javascript"></script>
+
 	<div>
 
 		<p>cabecera</p>
 		<p>
-			<c:out value="${sessionScope.nombresesion}"/>
-			<c:out value="${sessionScope.hora}"/>
-
+			<c:out value="${nombresesion}"></c:out>
+			<c:out value="${rolsession}"></c:out>
+			<c:out value="${hora}"></c:out>
 		</p>
-
+		<form action="../Logout">
+		<p><input type="submit" value="CerrarSesion" ></p>
+		</form>
+		
+		<input type=<%=(request.getRequestURI().endsWith("Menu.jsp")) ? "hidden" : "sumbit"  %> value="Volver" id="volver" onclick="window.history.go(-1)">
+		
+		
 
 
 

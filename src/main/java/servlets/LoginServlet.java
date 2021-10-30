@@ -78,7 +78,11 @@ public class LoginServlet extends HttpServlet {
 			logger.info(String.format(">>>>>>creando session."));
 			HttpSession session = request.getSession();
 			String nombresession = usuario.getNombre();
+			int rolsession = usuario.getId_rol();
 			session.setAttribute("nombresesion", nombresession);
+			session.setAttribute("rolsession", rolsession);
+			
+			
 			//hora
 			SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 			Date date = new Date(System.currentTimeMillis());
@@ -88,6 +92,8 @@ public class LoginServlet extends HttpServlet {
 			//response.sendRedirect("Login/bienvenida.html");
 			response.sendRedirect("Login/Menu.jsp");
 		}else {
+			//TODO: en el login hacer un boton para crear una cuenta nueva
+			//response.sendRedirect("Login/AltaUsuario.jsp");
 			response.sendRedirect("index.html");
 			pw.println("no!");
 		}

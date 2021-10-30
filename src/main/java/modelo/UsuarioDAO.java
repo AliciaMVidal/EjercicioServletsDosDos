@@ -79,6 +79,7 @@ public class UsuarioDAO {
 				while (resultado.next()) {
 					usuario = new Usuario();
 					usuario.setNombre(resultado.getString("nombre"));
+					usuario.setId_rol(resultado.getInt("id_rol"));
 				}
 				resultado.close();
 				ps.close();
@@ -90,6 +91,27 @@ public class UsuarioDAO {
 		}
 
 		return usuario;
+
+	}
+	
+
+	public void insertarUsuario(String password, String usuario) {
+		conexion = Conexion.getConexion();
+
+		
+		PreparedStatement ps;
+		try {
+			ps = conexion.prepareStatement("INSERT INTO usuarios (id_rol, clave, nombre) " + "VALUES (?,?,?)");
+			ps.setInt(1, 1);
+			ps.setString(2, password);
+			ps.setString(3, usuario);
+			ps.executeUpdate();
+			conexion.commit();
+			// Conexion.desconectar();
+
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
 
 	}
 
