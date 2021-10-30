@@ -16,7 +16,7 @@
 
 <filter-mapping>
     <filter-name>FiltroRol</filter-name>
-    <url-pattern>/Login/AltaRol.jsp</url-pattern>
+    <url-pattern>/Login/Admin/*</url-pattern>
 </filter-mapping>
 
 </web-app>

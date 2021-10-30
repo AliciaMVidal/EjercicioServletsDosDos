@@ -15,7 +15,7 @@
 
 	<form>
 		<p>
-			<button type="submit" formaction="AltaRol.jsp">Alta de nuevo
+			<button type="submit" formaction="Admin/AltaRol.jsp">Alta de nuevo
 				rol</button>
 		</p>
 		<br>
@@ -29,7 +29,7 @@
 	</form>
 	<form>
 		<p>
-			<button type="submit" formaction="AltaCategoria.jsp">Crear nueva categoria</button>
+			<button type="submit" formaction="Admin/AltaCategoria.jsp">Crear nueva categoria</button>
 		</p>
 		<br>
 	</form>
